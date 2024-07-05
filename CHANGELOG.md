@@ -1,3 +1,7 @@
+#### 2.8.4: Release
+
+ - fix: This PR fixes a bug (#1) @ppawlowski
+
 #### 2.8.3: Release
 
 
