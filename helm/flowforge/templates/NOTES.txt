@@ -1,4 +1,10 @@
-WARNING: This Helm chart is deprecated. Please use flowfuse/flowfuse helm chart to install latest FlowFuse platform version
+╔═══════════════════════════════════════ WARNING ═══════════════════════════════════════╗
+║                                                                                       ║
+║        This Helm chart is deprecated. Please use flowfuse/flowfuse helm chart         ║
+║                    to install latest FlowFuse platform version                        ║
+║                                                                                       ║
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
+
 
 Thank you for installing {{ .Chart.Name }} v{{ .Chart.AppVersion }}
 
