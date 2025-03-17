@@ -1,7 +1,9 @@
+# The flowforge chart is deprecated and no longer maintained
+deprecated: true
 apiVersion: "v2"
 name: "flowforge"
 version: "2.1.1"
-description: "FlowFuse"
+description: "DEPRECATED FlowFuse"
 type: "application"
 home: "https://flowfuse.com"
 icon: "https://flowfuse.com/apple-touch-icon.png"
@@ -16,8 +18,5 @@ dependencies:
     import-values:
       - child: image
         parent: postgresql.image
-maintainers:
-  - name: "FlowForge Inc"
-    url: "https://flowfuse.com"
 appVersion: "2.15.0"
-deprecated: true
+
