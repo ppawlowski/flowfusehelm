@@ -1,5 +1,5 @@
 apiVersion: "v2"
-name: "flowforge"
+name: "flowfuse"
 version: "2.1.1"
 description: "FlowFuse"
 type: "application"
@@ -17,6 +17,6 @@ dependencies:
       - child: image
         parent: postgresql.image
 maintainers:
-  - name: "FlowForge Inc"
+  - name: "FlowFuse Inc"
     url: "https://flowfuse.com"
 appVersion: "2.15.0"
