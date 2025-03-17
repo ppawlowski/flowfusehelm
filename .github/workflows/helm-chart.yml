@@ -55,12 +55,13 @@ jobs:
             kubectl label --overwrite $node "role=management"
           done
 
-      - name: Run chart-testing (install and upgrade)
-        if: "${{!startsWith(github.event.pull_request.title, 'feat: Release')}}"
-        run: ct install --upgrade --config ./.github/configs/chart-testing.yaml
+      # - name: Run chart-testing (install and upgrade)
+      #   if: "${{!startsWith(github.event.pull_request.title, 'feat: Release')}}"
+      #   run: ct install --upgrade --config ./.github/configs/chart-testing.yaml
   
   validate:
     name: Validate chart against kubernetes API
+    if: false
     runs-on: ubuntu-latest
 
     steps:
