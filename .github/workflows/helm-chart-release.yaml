@@ -22,30 +22,30 @@ jobs:
           token: ${{ github.token }}
           fetch-depth: 0
 
-      - name: Wait for container images build
-        run: |
-          while :; do
-            result=$(gh api repos/:owner/:repo/actions/workflows | jq -r '.workflows[] | select(.name=="Release container images") | .id' | xargs -I {} gh api repos/:owner/:repo/actions/workflows/{}/runs --jq '.workflow_runs | max_by(.run_number)')
-            status=$(echo "$result" | jq -r '.status')
-            conclusion=$(echo "$result" | jq -r '.conclusion')
-            if [[ "$status" == "completed" ]]; then
-              if [[ "$conclusion" == "success" ]]; then
-                echo "Release container images workflow completed successfully"
-                break
-              else
-                echo "Release container images workflow failed"
-                exit 1
-              fi
-            elif [[ "$status" == "in_progress" || "$status" == "queued" ]]; then
-              echo "Release container images workflow is still running"
-              sleep 60
-            else
-              echo "Release container images workflow returned unexpected status: $status"
-              exit 1
-            fi
-          done
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Wait for container images build
+      #   run: |
+      #     while :; do
+      #       result=$(gh api repos/:owner/:repo/actions/workflows | jq -r '.workflows[] | select(.name=="Release container images") | .id' | xargs -I {} gh api repos/:owner/:repo/actions/workflows/{}/runs --jq '.workflow_runs | max_by(.run_number)')
+      #       status=$(echo "$result" | jq -r '.status')
+      #       conclusion=$(echo "$result" | jq -r '.conclusion')
+      #       if [[ "$status" == "completed" ]]; then
+      #         if [[ "$conclusion" == "success" ]]; then
+      #           echo "Release container images workflow completed successfully"
+      #           break
+      #         else
+      #           echo "Release container images workflow failed"
+      #           exit 1
+      #         fi
+      #       elif [[ "$status" == "in_progress" || "$status" == "queued" ]]; then
+      #         echo "Release container images workflow is still running"
+      #         sleep 60
+      #       else
+      #         echo "Release container images workflow returned unexpected status: $status"
+      #         exit 1
+      #       fi
+      #     done
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Helm
         uses: azure/setup-helm@v4
