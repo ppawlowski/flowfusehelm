@@ -3,6 +3,33 @@ entries:
   flowforge:
   - apiVersion: v2
     appVersion: 2.15.0
+    created: "2025-03-17T20:41:47.684706374Z"
+    dependencies:
+    - condition: forge.localPostgresql
+      import-values:
+      - child: image
+        parent: postgresql.image
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.9.13
+    deprecated: true
+    description: FlowFuse
+    digest: 14a54a6a41c5757a1835b991b2d2df434ee792dff896563ac3a1b26bb1ea88a0
+    home: https://flowfuse.com
+    icon: https://flowfuse.com/apple-touch-icon.png
+    keywords:
+    - flowforge
+    - node-red
+    maintainers:
+    - name: FlowForge Inc
+      url: https://flowfuse.com
+    name: flowforge
+    type: application
+    urls:
+    - https://github.com/ppawlowski/flowfusehelm/releases/download/v2.12.0/flowforge-2.12.0.tgz
+    version: 2.12.0
+  - apiVersion: v2
+    appVersion: 2.15.0
     created: "2025-03-17T20:29:41.598004382Z"
     dependencies:
     - condition: forge.localPostgresql
@@ -27,4 +54,31 @@ entries:
     urls:
     - https://github.com/ppawlowski/flowfusehelm/releases/download/v2.11.0/flowforge-2.11.0.tgz
     version: 2.11.0
-generated: "2025-03-17T20:29:41.598012237Z"
+  flowfuse:
+  - apiVersion: v2
+    appVersion: 2.15.0
+    created: "2025-03-17T20:41:47.809372439Z"
+    dependencies:
+    - condition: forge.localPostgresql
+      import-values:
+      - child: image
+        parent: postgresql.image
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.9.13
+    description: FlowFuse
+    digest: 2e80278ee670128dd5d6323cfeb70bf099e58dc8049b4231a681630515b3fae9
+    home: https://flowfuse.com
+    icon: https://flowfuse.com/apple-touch-icon.png
+    keywords:
+    - flowforge
+    - node-red
+    maintainers:
+    - name: FlowFuse Inc
+      url: https://flowfuse.com
+    name: flowfuse
+    type: application
+    urls:
+    - https://github.com/ppawlowski/flowfusehelm/releases/download/v2.1.1/flowfuse-2.1.1.tgz
+    version: 2.1.1
+generated: "2025-03-17T20:41:47.809384752Z"
