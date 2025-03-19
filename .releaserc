@@ -34,13 +34,6 @@
           "chartPath": "helm/flowfuse",
           "onlyUpdateVersion": true
       }
-    ],
-    [
-      "semantic-release-helm3",
-      {
-          "chartPath": "helm/flowforge",
-          "onlyUpdateVersion": true
-      }
     ]
   ]
 }
